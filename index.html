@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciência e Escolhas - Um RPG Educativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Consciência e Escolhas</h1>
+
+        <div id="status-bar" class="status-bar">
+            <span>Saúde: <span id="status-saude">100</span>%</span> |
+            <span>Conhecimento: <span id="status-conhecimento">0</span>%</span> |
+            <span>Relação: <span id="status-relacao">50</span>%</span>
+        </div>
+
+        <div id="narrative-box" class="narrative-box">
+            <p id="narrative-text">Carregando a história...</p>
+            <div id="educational-message" class="educational-message" style="display: none;"></div>
+        </div>
+
+        <div id="choices-container" class="choices-container">
+            </div>
+
+        <button id="continue-button" class="action-button primary" style="display: none;">Continuar</button>
+        <button id="restart-button" class="action-button danger" style="display: none;">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

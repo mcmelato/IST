@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entre Nós: Conexões, Escolhas e o Futuro</title>
+    <title>Entre Nós: O Labirinto das Conexões e Consequências</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght%7B700%7D&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="game-container">
         <header class="game-header">
             <h1>Entre Nós</h1>
-            <h2>Conexões, Escolhas e o Futuro</h2>
+            <h2>O Labirinto das Conexões e Consequências</h2>
         </header>
 
         <section id="opening-screen" class="game-screen">
@@ -35,6 +35,11 @@
                 <div id="choice-buttons-container" class="choices-wrapper">
                     </div>
                 <div id="feedback-message" class="feedback-info hidden"></div>
+                <div class="status-indicators">
+                    <span class="status-item">Consciência: <span id="conscience-display">0</span></span>
+                    <span class="status-item">Confiança: <span id="trust-display">0</span></span>
+                    <span class="status-item">Bem-Estar: <span id="wellbeing-display">0</span></span>
+                </div>
             </section>
         </main>
 

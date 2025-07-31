@@ -1,90 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consciência e Escolhas - Um RPG Educativo Transformado</title>
+    <title>Entre Nós: Conexões, Escolhas e o Futuro</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-overlay"></div>
     <div class="game-container">
         <header class="game-header">
-            <h1>Consciência e Escolhas</h1>
-            <p class="subtitle">Um RPG que explora decisões importantes sobre saúde e relacionamentos.</p>
+            <h1>Entre Nós</h1>
+            <h2>Conexões, Escolhas e o Futuro</h2>
         </header>
 
-        <div id="character-creation-screen" class="character-creation-screen">
-            <h2 class="section-title">Crie Seu Personagem</h2>
-            <div class="input-group">
-                <label for="player-name">Seu Nome:</label>
-                <input type="text" id="player-name" placeholder="Digite seu nome (opcional)">
+        <section id="opening-screen" class="game-screen">
+            <h3>Uma Jornada de Conexões</h3>
+            <p class="narrative-paragraph">A vida é feita de encontros. Alguns passageiros, outros que marcam. Mas em cada um, em cada conexão, há decisões. Decisões que moldam não só o presente, mas o seu futuro e a sua saúde. Quais caminhos você escolherá?</p>
+            <button id="start-journey-button" class="action-button">Iniciar Jornada</button>
+        </section>
+
+        <section id="gender-selection-screen" class="game-screen hidden">
+            <h3>Quem você será nesta história?</h3>
+            <p class="narrative-paragraph">Assuma o papel de [PERSONAGEM_NOME] e viva os desafios e aprendizados de uma vida sexual ativa e consciente.</p>
+            <div class="gender-options">
+                <button id="gender-male" class="gender-button">Masculino</button>
+                <button id="gender-female" class="gender-button">Feminino</button>
             </div>
+        </section>
 
-            <div class="input-group">
-                <p>Você se identifica como:</p>
-                <div class="choice-grid">
-                    <button class="choice-button" data-gender="female">Mulher</button>
-                    <button class="choice-button" data-gender="male">Homem</button>
-                    <button class="choice-button" data-gender="non-binary">Pessoa Não-Binária</button>
-                </div>
-            </div>
-
-            <div class="input-group">
-                <p>Seu interesse em um relacionamento:</p>
-                <div class="choice-grid">
-                    <button class="choice-button" data-interest="long-term">Relacionamento sério e duradouro</button>
-                    <button class="choice-button" data-interest="casual">Algo casual, sem compromisso imediato</button>
-                    <button class="choice-button" data-interest="explore">Explorar, sem rótulos definidos</button>
-                </div>
-            </div>
-            <button id="start-game-button" class="action-button primary">Iniciar Jornada</button>
-        </div>
-
-        <div id="game-content" style="display: none;">
-            <div id="status-bar" class="status-bar">
-                <div class="status-item">
-                    <span class="status-label">Saúde:</span>
-                    <span id="status-saude" class="status-value">100</span>%
-                    <div class="progress-bar"><div id="progress-saude" class="progress-fill"></div></div>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Conhecimento:</span>
-                    <span id="status-conhecimento" class="status-value">0</span>%
-                    <div class="progress-bar"><div id="progress-conhecimento" class="progress-fill"></div></div>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Relação:</span>
-                    <span id="status-relacao" class="status-value">50</span>%
-                    <div class="progress-bar"><div id="progress-relacao" class="progress-fill"></div></div>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Autonomia:</span>
-                    <span id="status-autonomia" class="status-value">50</span>%
-                    <div class="progress-bar"><div id="progress-autonomia" class="progress-fill"></div></div>
-                </div>
-            </div>
-
-            <main class="game-main">
-                <div id="narrative-box" class="narrative-box">
-                    <p id="narrative-text" class="fade-in">Carregando a história...</p>
-                    <div id="event-message" class="event-message" style="display: none;"></div>
-                    <div id="educational-message" class="educational-message" style="display: none;"></div>
-                </div>
-
-                <div id="choices-container" class="choices-container">
+        <main id="game-main" class="game-screen hidden">
+            <section class="story-section">
+                <p id="story-text" class="narrative-paragraph"></p>
+                <div id="choice-buttons-container" class="choices-wrapper">
                     </div>
+                <div id="feedback-message" class="feedback-info hidden"></div>
+            </section>
+        </main>
 
-                <div class="button-group">
-                    <button id="continue-button" class="action-button primary" style="display: none;">Avançar</button>
-                    <button id="restart-button" class="action-button danger" style="display: none;">Jogar Novamente</button>
-                </div>
-            </main>
-        </div>
-        <footer class="game-footer">
-            <p>&copy; 2024 Jogo Educativo sobre ISTs. Todos os direitos reservados.</p>
-        </footer>
+        <section id="results-screen" class="game-screen hidden">
+            <h3>Sua Jornada Chegou ao Fim!</h3>
+            <p id="final-score"></p>
+            <p id="result-message"></p>
+            <h4>Principais Aprendizados:</h4>
+            <ul id="lessons-learned"></ul>
+            <button id="restart-game-button" class="action-button">Recomeçar Aventura</button>
+        </section>
     </div>
 
     <script src="script.js"></script>
